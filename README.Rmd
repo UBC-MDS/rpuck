@@ -20,7 +20,12 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-If you were to try and analyze statistics for your favorite hockey team, or try to predict an outcome of the next match you'd probably browsed the Internet in search of convenient tools to get the data you want from the NHL website. And while there is a bunch of NHL API packages available in python we yet to see this kind of variety in R libraries. The rpuck library is designed to allow users the ability to get both relevant and historical statistics for NHL conveniently. As of now, the package has limited functionality that can further be extended based on feedback.
+If you were to try and analyze statistics for your favorite hockey team, or try to predict an outcome of the next match you'd probably browse the internet in search of convenient tools to get the data you want from the NHL website. While there are a bunch of NHL API packages available in python, there is limited availability of many R packages. Therefore, the rpuck library is designed to allow users the ability to conveniently get both relevant and historical statistics from the publicly available but as of yet undocumented NHL.com API. As of now the package has limited functionality, and is considered a work-in-progress. We will add in additional functionality in the coming weeks which can easily be extended based on feedback we recieve.
+
+## Team
+
+| [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko ](https://github.com/PolinaRomanchenko)| [Manish Joshi](https://github.com/ManishPJoshi)|
+|:------------:|:--------------:|:--------------:|:--------------:|
 
 ## Installation
 
@@ -39,16 +44,19 @@ devtools::install_github("UBC-MDS/rpuck")
 
 ## Features
 
-- draft_pick(pick_number=None, round_number=None, year=None):
+- `draft_pick(pick_number=NULL, round_number=NULL, year=NULL)`:
   - The draft_pick(pick_number=None, round_number=None, year=None) function makes an API call to the drafts summary on the NHL.com API. The function returns information about draft picks for the specified arguments and stores them in a data frame.
-  
-  
-  
+- `attendance(regular=True, playoffs=True, season=NULL)`:
+  - The attendance() function makes a query to the Attendance API to get the NHL’s seasonal and playoff attendance numbers. The function displays attendance numbers in a ggplot chart.
+- `team_stats(start_season=NULL, end_season=NULL)`:
+  - The team_stats() function makes an API call to the team summary endpoint on the NHL.com API. The function returns team seasonal stats for given seasons sorted by total team points.
+- `player_stats(start_date=NULL, end_date=NULL)`:
+  - The player_stats() function makes an API call to the player summary endpoint on the NHL.com API. The function returns the top 100 player stats for a given date range as sorted by total points.
   
 
 ## R Ecosystem 
 
-There are some packages written in r language that are focused on providing a user with convenient tools to access statistics from NHL.com with API calls and helping to make sense of them. Rpuck is landing in the niche with such libraries as [nhlapi](https://github.com/zamorarr/nhlapi), [nhlscrape](https://cran.r-project.org/web/packages/nhlscrape/index.html). 
+There are some packages written in the R language that are focused on providing a user with convenient tools to access statistics from NHL.com with API calls and helping to make sense of them. Rpuck is landing in its own niche with compared with such libraries as [nhlapi](https://github.com/zamorarr/nhlapi), [nhlscrape](https://cran.r-project.org/web/packages/nhlscrape/index.html). 
 
 
 ## Dependencies
@@ -56,4 +64,3 @@ R version 3.6.1 and R packages:
 
 - knitr==1.26 [@knitr]
 - tidyverse==1.2.1 [@tidyverse]
-
