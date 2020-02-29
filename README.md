@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<img src="img/rpuck_logo.png" width="150" align = "right">
+
 # rpuck
 
 <!-- badges: start -->

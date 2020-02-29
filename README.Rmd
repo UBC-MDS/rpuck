@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+<img src="img/rpuck_logo.png" width="150" align = "right">
+
 # rpuck
 
 <!-- badges: start -->
