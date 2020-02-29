@@ -9,7 +9,15 @@
 
 <!-- badges: end -->
 
-The goal of rpuck is to …
+If you were to try and analyze statistics for your favorite hockey team,
+or try to predict an outcome of the next match you’d probably browsed
+the Internet in search of convenient tools to get the data you want from
+the NHL website. And while there is a bunch of NHL API packages
+available in python we yet to see this kind of variety in R libraries.
+The rpuck library is designed to allow users the ability to get both
+relevant and historical statistics for NHL conveniently. As of now, the
+package has limited functionality that can further be extended based on
+feedback.
 
 ## Installation
 
@@ -27,35 +35,27 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("UBC-MDS/rpuck")
 ```
 
-## Example
+## Features
 
-This is a basic example which shows you how to solve a common problem:
+  - draft\_pick(pick\_number=None, round\_number=None, year=None):
+      - The draft\_pick(pick\_number=None, round\_number=None,
+        year=None) function makes an API call to the drafts summary on
+        the NHL.com API. The function returns information about draft
+        picks for the specified arguments and stores them in a data
+        frame.
 
-``` r
-library(rpuck)
-## basic example code
-```
+## R Ecosystem
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+There are some packages written in r language that are focused on
+providing a user with convenient tools to access statistics from NHL.com
+with API calls and helping to make sense of them. Rpuck is landing in
+the niche with such libraries as
+[nhlapi](https://github.com/zamorarr/nhlapi),
+[nhlscrape](https://cran.r-project.org/web/packages/nhlscrape/index.html).
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+## Dependencies
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
+R version 3.6.1 and R packages:
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+  - knitr==1.26 \[@knitr\]
+  - tidyverse==1.2.1 \[@tidyverse\]
