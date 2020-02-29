@@ -19,12 +19,13 @@ both relevant and historical statistics from the publicly available but
 as of yet undocumented NHL.com API. As of now the package has limited
 functionality, and is considered a work-in-progress. We will add in
 additional functionality in the coming weeks which can easily be
-extended based on feedback we recieve.
+extended based on feedback we
+recieve.
 
 ## Team
 
-| [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko ](https://github.com/PolinaRomanchenko)| [Manish Joshi](https://github.com/ManishPJoshi)|
-|:------------:|:--------------:|:--------------:|:--------------:|
+| [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko](https://github.com/PolinaRomanchenko) | [Manish Joshi](https://github.com/ManishPJoshi) |
+| :--------------------------------------------: | :----------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------: |
 
 ## Installation
 
@@ -44,21 +45,21 @@ devtools::install_github("UBC-MDS/rpuck")
 
 ## Features
 
-  - draft\_pick(pick\_number=NULL, round\_number=NULL, year=NULL):
+  - `draft_pick(pick_number=NULL, round_number=NULL, year=NULL)`:
       - The draft\_pick(pick\_number=None, round\_number=None,
         year=None) function makes an API call to the drafts summary on
         the NHL.com API. The function returns information about draft
         picks for the specified arguments and stores them in a data
         frame.
-  - attendance(regular=True, playoffs=True, season=NULL):
+  - `attendance(regular=True, playoffs=True, season=NULL)`:
       - The attendance() function makes a query to the Attendance API to
         get the NHL’s seasonal and playoff attendance numbers. The
         function displays attendance numbers in a ggplot chart.
-  - team\_stats(start\_season=NULL, end\_season=NULL):
+  - `team_stats(start_season=NULL, end_season=NULL)`:
       - The team\_stats() function makes an API call to the team summary
         endpoint on the NHL.com API. The function returns team seasonal
         stats for given seasons sorted by total team points.
-  - player\_stats(start\_date=NULL, end\_date=NULL):
+  - `player_stats(start_date=NULL, end_date=NULL)`:
       - The player\_stats() function makes an API call to the player
         summary endpoint on the NHL.com API. The function returns the
         top 100 player stats for a given date range as sorted by total
