@@ -19,6 +19,11 @@ relevant and historical statistics for NHL conveniently. As of now, the
 package has limited functionality that can further be extended based on
 feedback.
 
+### Team
+
+| [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko](https://github.com/PolinaRomanchenko) | [Manish Joshi](https://github.com/ManishPJoshi) |
+| :--------------------------------------------: | :----------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------: |
+
 ## Installation
 
 You can install the released version of rpuck from
