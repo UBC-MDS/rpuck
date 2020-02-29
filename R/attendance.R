@@ -1,4 +1,4 @@
-#' player_stats
+#' attendance
 #'
 #' This function will make a query to the Attendance API to get
 #' the NHL's seasonal and playoff attendance numbers.
@@ -13,3 +13,7 @@
 #' @examples
 #' rpuck.attendance(regular=True, playoffs=True, season= "2000-11")
 #'
+
+attendance <- function(a, b) {
+  factor(c(as.character(a), as.character(b)))
+}
