@@ -17,6 +17,6 @@
 #' @return data.frame
 #' @export
 #' @examples
-#' team_stats(start_date = "19801981", end_date = "19891990")
-team_stats <- function(start_date = NULL, end_date = NULL) {
+#' team_stats(start_season = "19801981", end_season = "19891990")
+team_stats <- function(start_season = NULL, end_season = NULL) {
 }
