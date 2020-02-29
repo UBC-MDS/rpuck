@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of rpuck is to ...
+If you were to try and analyze statistics for your favorite hockey team, or try to predict an outcome of the next match you'd probably browsed the Internet in search of convenient tools to get the data you want from the NHL website. And while there is a bunch of NHL API packages available in python we yet to see this kind of variety in R libraries. The rpuck library is designed to allow users the ability to get both relevant and historical statistics for NHL conveniently. As of now, the package has limited functionality that can further be extended based on feedback.
 
 ## Installation
 
@@ -36,27 +36,24 @@ And the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/rpuck")
 ```
-## Example
 
-This is a basic example which shows you how to solve a common problem:
+## Features
 
-```{r example}
-library(rpuck)
-## basic example code
-```
+- draft_pick(pick_number=None, round_number=None, year=None):
+  - The draft_pick(pick_number=None, round_number=None, year=None) function makes an API call to the drafts summary on the NHL.com API. The function returns information about draft picks for the specified arguments and stores them in a data frame.
+  
+  
+  
+  
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## R Ecosystem 
 
-```{r cars}
-summary(cars)
-```
+There are some packages written in r language that are focused on providing a user with convenient tools to access statistics from NHL.com with API calls and helping to make sense of them. Rpuck is landing in the niche with such libraries as [nhlapi](https://github.com/zamorarr/nhlapi), [nhlscrape](https://cran.r-project.org/web/packages/nhlscrape/index.html). 
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
 
-You can also embed plots, for example:
+## Dependencies
+R version 3.6.1 and R packages:
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+- knitr==1.26 [@knitr]
+- tidyverse==1.2.1 [@tidyverse]
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
