@@ -14,6 +14,5 @@
 #' rpuck.attendance(regular=True, playoffs=True, season= "2000-11")
 #'
 
-attendance <- function(a, b) {
-  factor(c(as.character(a), as.character(b)))
+attendance <- function(regular = TRUE, playoffs = TRUE, season = NULL) {
 }
