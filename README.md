@@ -21,6 +21,11 @@ functionality, and is considered a work-in-progress. We will add in
 additional functionality in the coming weeks which can easily be
 extended based on feedback we recieve.
 
+## Team
+
+| [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko ](https://github.com/PolinaRomanchenko)| [Manish Joshi](https://github.com/ManishPJoshi)|
+|:------------:|:--------------:|:--------------:|:--------------:|
+
 ## Installation
 
 You can install the released version of rpuck from
