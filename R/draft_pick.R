@@ -15,7 +15,38 @@
 #' @export
 #' @examples
 #' draft_pick(pick_number = 1, round_number = 2, year = '2019')
-draft_pick <- function(pick_number = 1, round_number=None, year=None) {
+
+library(tidyverse)
+library(httr)
+library(jsonlite)
+
+draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL){
+  test_that('Pick number out of range', {
+    expect_true(isin(seq(1,38,1), pick_number))
+  })
+  
+  #TODO input error handling on rest of the parameters
+  
+  #Setting up API call
+  path <- "https://records.nhl.com/site/api/draft"
+  request <- GET(url = path)
+  response <- content(request, as = "text", encoding = 'UTF-8') 
+  df <- fromJSON(response) %>% 
+    data.frame()
+  df <- select(df,  Player = data.playerName, triCode = data.triCode, Pick_number = data.pickInRound, Round_number = data.roundNumber,
+               Year = data.draftYear)
+  
+  #Selecting based on input data
+  if (!is.null(round_number) & !is.null(year)){
+    df <- subset(df, Year == year & Round_number == round_number & Pick_number == pick_number)
+  }
+  else if (!is.null(round_number)){
+    df <- subset(df, Round_number == round_number & Pick_number == pick_number)
+  }
+  else if (!is.null(year)){
+    df <- subset(df, Year == year & Pick_number == pick_number)
+  }
+  else {df <- subset(df, Pick_number == pick_number)}
 }
 
 
