@@ -19,10 +19,6 @@
 #' @examples
 #' draft_pick(pick_number = 1, round_number = 2, year = '2019')
 
-library(tidyverse)
-library(httr)
-library(jsonlite)
-library(testthat)
 
 draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL){
   
