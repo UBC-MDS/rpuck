@@ -4,7 +4,7 @@
 \alias{attendance}
 \title{attendance}
 \usage{
-attendance(a, b)
+attendance(regular = TRUE, playoffs = TRUE, season = NULL)
 }
 \arguments{
 \item{regular}{boolean}
