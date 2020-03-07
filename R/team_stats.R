@@ -16,31 +16,30 @@
 #'
 #' @return data.frame
 #' @export
+#' @import glue
+#' @import httr
+#' @import jsonlite
 #' @examples
 #' team_stats(start_season = "19801981", end_season = "19891990")
 
 team_stats <- function(start_season = NULL, end_season = NULL) {
 
-  # Set the start and end dates to current season if NULL
-  start_season <- if (is.null(start_date)) '20192020' else start_date
-  end_season <- if (is.null(end_date)) '20192020' else end_date
+  # Set the start and end seasons to current season if NULL
+  start_season <- if (is.null(start_season)) '20192020' else start_season
+  end_season <- if (is.null(end_season)) '20192020' else end_season
 
   # Check that the argument's are of type character
   if (typeof(start_season) != "character") stop("'start_season' must be of type 'character'")
   if (typeof(end_season) != "character") stop("'end_season' must be of type 'character'")
 
-
   # Define the base URL
-
   url <- "https://api.nhle.com/stats/rest/en/team/summary?"
-
 
   # Add in some optional arguments to part of URL string
   options <- glue::glue('cayenneExp=gameTypeId=2%20and%20seasonId<="{end_season}"%20and%20seasonId>={start_season}')
 
   # Remove all whitespace characters from URL string, and append rest of URL
   url <- gsub("[[:space:]]", "", url) + options
-
 
   # Make the URL request
   r <- httr::GET(url)
@@ -54,13 +53,8 @@ team_stats <- function(start_season = NULL, end_season = NULL) {
   # Parse the contents returned as text
   response <- httr::content(r, as = "text", encoding = "UTF-8")
 
-
-
   # Convert the text response to json and then to a data.frame
   df <- data.frame(jsonlite::fromJSON(response, flatten = TRUE)$data)
 
 }
-
-
-
 
