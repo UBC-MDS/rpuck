@@ -18,33 +18,35 @@
 #' @import testthat
 #'
 #' @export
+#' @import httr
+#' @import testthat
+#' @import jsonlite
+#' @import dplyr
 #' @examples
 #' draft_pick(pick_number = 1, round_number = 2, year = '2019')
 
-draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL){
+draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
 
   #Checking proper input
-  test_that('Pick number out of range', {
-    expect_true(pick_number %in% seq(1,38,1))
+  testthat::test_that('Pick number out of range', {
+    testthat::expect_true(pick_number %in% seq(1,38,1))
   })
 
-  if (!is.null(round_number)){test_that('Round number out of range', {
-    expect_true(round_number %in% seq(1,25,1))
+  if (!is.null(round_number)){testthat::test_that('Round number out of range', {
+    testthat::expect_true(round_number %in% seq(1,25,1))
   })}
 
-  if (!is.null(year)){test_that('Year out of range', {
-    expect_true(year %in% seq(1963,2019,1))
+  if (!is.null(year)){testthat::test_that('Year out of range', {
+    testthat::expect_true(year %in% seq(1963,2019,1))
   })}
 
   #Setting up API call
   path <- "https://records.nhl.com/site/api/draft"
-  request <- GET(url = path)
-  response <- content(request, as = "text", encoding = 'UTF-8')
-  df <- fromJSON(response) %>%
-    data.frame()
-  df <- select(df,  Player = data.playerName, triCode = data.triCode, Pick_number = data.pickInRound, Round_number = data.roundNumber,
-               Year = data.draftYear)
-
+  request <- httr::GET(url = path)
+  response <- httr::content(request, as = "text", encoding = 'UTF-8')
+  df <- data.frame(jsonlite::fromJSON(response))
+  df <- dplyr::select(df,  Player = data.playerName, triCode = data.triCode, Pick_number = data.pickInRound, Round_number = data.roundNumber,
+                      Year = data.draftYear)
   #Selecting based on input data
   if (!is.null(round_number) & !is.null(year)){
     df <- subset(df, Year == year & Round_number == round_number & Pick_number == pick_number)
@@ -66,5 +68,5 @@ draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL){
     break
   }
 
-  return(df)
+  df
 }
