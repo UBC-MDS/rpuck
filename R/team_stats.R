@@ -33,14 +33,7 @@ team_stats <- function(start_season = NULL, end_season = NULL) {
   # Define the base URL
 
   url <- 'https://api.nhle.com/stats/rest/en/team/summary?
-          isAggregate=true&
-          isGame=true&
-          sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,
-          %7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,
-          %7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D%5D&
-          start=0&
-          limit=100&
-          factCayenneExp=gamesPlayed%3E=1&'
+
 
 
 
