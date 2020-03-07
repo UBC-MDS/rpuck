@@ -21,7 +21,7 @@ from the Team Summary Stats API to the the Team's Summary season stats.
 \details{
 The stats are queried on an aggregated team by team basis
 for a range of dates. If no date is specified the function will
-return the team stats for the current season. 
+return the team stats for the current season.
 The available seasons range from 1975-1976 to 2018-2019
 If no year is specified then the year 2019-2020 is default.
 If an end year is specified then the start year is also to be provided.

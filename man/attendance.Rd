@@ -31,6 +31,6 @@ numbers, or both. The function will display a chart showing the attendance over 
 specified time period.
 }
 \examples{
-rpuck.attendance(regular=True, playoffs=True, season= "2000-11")
+attendance(regular=TRUE, playoffs=TRUE, start_season= 2000, end_season=2018)
 
 }
