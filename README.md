@@ -17,10 +17,8 @@ python, there is limited availability of many R packages. Therefore, the
 rpuck library is designed to allow users the ability to conveniently get
 both relevant and historical statistics from the publicly available but
 as of yet undocumented NHL.com API. As of now the package has limited
-functionality, and is considered a work-in-progress. We will add in
-additional functionality in the coming weeks which can easily be
-extended based on feedback we
-recieve.
+functionality, and is considered as a work-in-progress package. We will add additional functionalities in the coming weeks which can easily be
+extended based on the feedbacks we receive.
 
 ## Team
 

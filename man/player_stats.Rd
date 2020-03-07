@@ -23,6 +23,7 @@ The stats are queried on an aggregated game-by-game basis
 for a range of dates. If no date is specified the function will
 return the player's stats for the current season. The stats to be
 returned are restricted to the regular season.
+
 }
 \examples{
 player_stats(start_date = "2019-10-02", end_date = "2020-02-28")

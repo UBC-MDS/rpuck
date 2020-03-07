@@ -4,12 +4,14 @@
 \alias{attendance}
 \title{attendance}
 \usage{
+
 attendance(
   regular = TRUE,
   playoffs = TRUE,
   start_season = NULL,
   end_season = NULL
 )
+
 }
 \arguments{
 \item{regular}{boolean}
