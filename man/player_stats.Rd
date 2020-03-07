@@ -24,6 +24,8 @@ for a range of dates. If no date is specified the function will
 return the player's stats for the current season. The stats to be
 returned are restricted to the regular season.
 
+The function will return the current season's stats if the arguments
+are blank (i.e. left as None).
 }
 \examples{
 player_stats(start_date = "2019-10-02", end_date = "2020-02-28")
