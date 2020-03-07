@@ -35,10 +35,11 @@ team_stats <- function(start_season = NULL, end_season = NULL) {
   url <- "https://api.nhle.com/stats/rest/en/team/summary?"
 
 
+  # Add in some optional arguments to part of URL string
+  options <- glue::glue('cayenneExp=gameTypeId=2%20and%20seasonId<="{end_season}"%20and%20seasonId>={start_season}')
 
-
-  # Add in some optional arguments
-
+  # Remove all whitespace characters from URL string, and append rest of URL
+  url <- gsub("[[:space:]]", "", url) + options
 
 
   # Make the URL request
@@ -52,6 +53,8 @@ team_stats <- function(start_season = NULL, end_season = NULL) {
 
   # Parse the contents returned as text
   response <- httr::content(r, as = "text", encoding = "UTF-8")
+
+
 
   # Convert the text response to json and then to a data.frame
   df <- data.frame(jsonlite::fromJSON(response, flatten = TRUE)$data)
