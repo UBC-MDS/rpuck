@@ -25,7 +25,6 @@
 #' @examples
 #' draft_pick(pick_number = 1, round_number = 2, year = '2019')
 
-<<<<<<< HEAD
 draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
 
   #Checking proper input
@@ -43,7 +42,6 @@ draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
 
   #Setting up API call
   path <- "https://records.nhl.com/site/api/draft"
-<<<<<<< HEAD
   request <- httr::GET(url = path)
   response <- httr::content(request, as = "text", encoding = 'UTF-8')
   df <- data.frame(jsonlite::fromJSON(response))
