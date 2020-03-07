@@ -1,7 +1,4 @@
 library(testthat)
-# library(rpuck)
-
-#' Tests the draft_pick function from rpuck package.
 
 test_player_stats_errors <- function(){
   test_that("player_stats() function returns errors when expected" , {

@@ -17,8 +17,10 @@ python, there is limited availability of many R packages. Therefore, the
 rpuck library is designed to allow users the ability to conveniently get
 both relevant and historical statistics from the publicly available but
 as of yet undocumented NHL.com API. As of now the package has limited
-functionality, and is considered as a work-in-progress package. We will add additional functionalities in the coming weeks which can easily be
-extended based on the feedbacks we receive.
+functionality, and is considered a work-in-progress. We will add in
+additional functionality in the coming weeks which can easily be
+extended based on feedback we
+recieve.
 
 ## Team
 
@@ -63,6 +65,13 @@ devtools::install_github("UBC-MDS/rpuck")
         summary endpoint on the NHL.com API. The function returns the
         top 100 player stats for a given date range as sorted by total
         points.
+
+## Tests
+
+We have included a variety of tests for each function in the
+`tests\testthat` directory. The tests check that the functions error
+gracefully and that proper function calls return the correct
+data/objects.
 
 ## R Ecosystem
 
