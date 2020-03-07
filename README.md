@@ -51,7 +51,8 @@ devtools::install_github("UBC-MDS/rpuck")
         the NHL.com API. The function returns information about draft
         picks for the specified arguments and stores them in a data
         frame.
-  - `attendance(regular=True, playoffs=True, season=NULL)`:
+  - `attendance(regular=True, playoffs=True, start_season=NULL,
+    end_season=NULL)`:
       - The attendance() function makes a query to the Attendance API to
         get the NHL’s seasonal and playoff attendance numbers. The
         function displays attendance numbers in a ggplot chart.
