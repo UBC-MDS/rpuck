@@ -32,7 +32,7 @@ team_stats <- function(start_season = NULL, end_season = NULL) {
 
   # Define the base URL
 
-  url <- 'https://api.nhle.com/stats/rest/en/team/summary?
+  url <- "https://api.nhle.com/stats/rest/en/team/summary?"
 
 
 
@@ -48,7 +48,7 @@ team_stats <- function(start_season = NULL, end_season = NULL) {
   status.code <- httr::status_code(r)
 
   # Check request status code
-  if (status.code != 200) stop(paste('Bad request response code -->', status.code))
+  if (status.code != 200) stop(paste("Bad request response code -->", status.code))
 
   # Parse the contents returned as text
   response <- httr::content(r, as = "text", encoding = "UTF-8")
