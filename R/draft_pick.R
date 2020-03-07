@@ -68,5 +68,5 @@ draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
     break
   }
 
-  return(df)
+  df
 }
