@@ -4,22 +4,31 @@
 \alias{attendance}
 \title{attendance}
 \usage{
-attendance(a, b)
+attendance(
+  regular = TRUE,
+  playoffs = TRUE,
+  start_season = NULL,
+  end_season = NULL
+)
 }
 \arguments{
 \item{regular}{boolean}
 
 \item{playoffs}{boolean}
 
-\item{season}{string}
+\item{start_season}{integer}
+
+\item{end_season}{integer}
 }
 \value{
-factor
+a ggplot object
 }
 \description{
-This function will make a query to the Attendance API to get
-the NHL's seasonal and playoff attendance numbers.
-The function will display the NHL seasonal attendance numbers in a ggplot chart
+The function will query the NHL attendance number from 1975 to 2019 from the NHL records API. The
+attendance represents annual attendance numbers for all teams.
+The user can specify to return either the regular season attendance, playoff attendance
+numbers, or both. The function will display a chart showing the attendance over the
+specified time period.
 }
 \examples{
 rpuck.attendance(regular=True, playoffs=True, season= "2000-11")

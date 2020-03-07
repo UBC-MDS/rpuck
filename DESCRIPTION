@@ -14,5 +14,10 @@ LazyData: true
 RoxygenNote: 7.0.2
 Suggests: 
     testthat (>= 2.1.0)
-Imports: 
-    rpuck
+Imports:
+    dplyr,
+    httr,
+    ggplot2,
+    jsonlite,
+    grid,
+    gridExtra

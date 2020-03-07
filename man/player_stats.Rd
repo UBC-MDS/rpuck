@@ -4,20 +4,26 @@
 \alias{player_stats}
 \title{player_stats}
 \usage{
-player_stats(a, b)
+player_stats(start_date = NULL, end_date = NULL)
 }
 \arguments{
-\item{a}{factor}
+\item{a}{string}
 
-\item{b}{factor}
+\item{b}{string}
 }
 \value{
-factor
+data.frame
 }
 \description{
-Create a new factor from two existing factors, where the new factor's levels
-are the union of the levels of the input factors.
+Query the top 100 player's stats (sorted by total points)
+from the player's summary report endpoint on the NHL.com API.
+}
+\details{
+The stats are queried on an aggregated game-by-game basis
+for a range of dates. If no date is specified the function will
+return the player's stats for the current season. The stats to be
+returned are restricted to the regular season.
 }
 \examples{
-player_stats(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
+player_stats(start_date = "2019-10-02", end_date = "2020-02-28")
 }
