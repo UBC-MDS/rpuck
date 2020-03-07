@@ -15,6 +15,8 @@
 #' @param year str containing a year from 1963 to 2019
 #'
 #' @return data.frame
+#' @import testthat
+#'
 #' @export
 #' @import httr
 #' @import testthat
@@ -23,6 +25,7 @@
 #' @examples
 #' draft_pick(pick_number = 1, round_number = 2, year = '2019')
 
+<<<<<<< HEAD
 draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
 
   #Checking proper input
@@ -40,12 +43,12 @@ draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
 
   #Setting up API call
   path <- "https://records.nhl.com/site/api/draft"
+<<<<<<< HEAD
   request <- httr::GET(url = path)
   response <- httr::content(request, as = "text", encoding = 'UTF-8')
   df <- data.frame(jsonlite::fromJSON(response))
   df <- dplyr::select(df,  Player = data.playerName, triCode = data.triCode, Pick_number = data.pickInRound, Round_number = data.roundNumber,
                       Year = data.draftYear)
-
   #Selecting based on input data
   if (!is.null(round_number) & !is.null(year)){
     df <- subset(df, Year == year & Round_number == round_number & Pick_number == pick_number)
@@ -67,5 +70,5 @@ draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
     break
   }
 
-  df
+  return(df)
 }

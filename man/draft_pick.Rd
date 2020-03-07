@@ -4,7 +4,7 @@
 \alias{draft_pick}
 \title{draft_pick}
 \usage{
-draft_pick(pick_number = 1, round_number = None, year = None)
+draft_pick(pick_number = 1, round_number = NULL, year = NULL)
 }
 \arguments{
 \item{pick_number}{int in range [1,38]}
@@ -20,10 +20,13 @@ data.frame
 Query the result of draft by year summary report endpoint on the NHL.com API.
 }
 \details{
-Depending on information provided in the parameters function will return summary 
-on a person picked in specified draft round, pick and year. If year is not specified 
-then all of the draft picks for that year will be returned. If no round is specified 
+Depending on information provided in the parameters function will return summary
+on a person picked in specified draft round, pick and year. If year is not specified
+then all of the draft picks for that year will be returned. If no round is specified
 the dataframe will include all of the players with chosen pick number from every round.
+
+There are cases when even though user entered valid parameters, output would be empty
+if a pick number didn't exist in a specified round, warning would be raised.
 }
 \examples{
 draft_pick(pick_number = 1, round_number = 2, year = '2019')

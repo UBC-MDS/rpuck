@@ -21,10 +21,11 @@
 #' @import gridExtra
 #' @import httr
 #' @import jsonlite
+#' @import tidyr
 #'
 #' @export
 #' @examples
-#' rpuck.attendance(regular=True, playoffs=True, season= "2000-11")
+#' attendance(regular=TRUE, playoffs=TRUE, start_season= 2000, end_season=2018)
 #'
 
 attendance <- function(regular = TRUE, playoffs = TRUE, start_season = NULL, end_season = NULL) {
