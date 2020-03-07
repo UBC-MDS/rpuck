@@ -2,8 +2,12 @@
 
 export()
 export(attendance)
+export(draft_pick)
 export(player_stats)
 export(team_stats)
+import(dplyr)
+import(ggplot2)
+import(gridExtra)
 import(glue)
 import(httr)
 import(jsonlite)
