@@ -27,18 +27,12 @@
 
 draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
 
-  #Checking proper input
-  testthat::test_that('Pick number out of range', {
-    testthat::expect_true(pick_number %in% seq(1,38,1))
-  })
-
-  if (!is.null(round_number)){testthat::test_that('Round number out of range', {
-    testthat::expect_true(round_number %in% seq(1,25,1))
-  })}
-
-  if (!is.null(year)){testthat::test_that('Year out of range', {
-    testthat::expect_true(year %in% seq(1963,2019,1))
-  })}
+  year <- if (is.null(year)) 2019 else year
+  if (pick_number %in% seq(1,31,1) == FALSE) stop("Pick number out of range")
+  if (is.null(round_number) == FALSE) {
+    if (round_number %in% seq(1,25,1) == FALSE) stop("Round number out of range")
+  }
+  if (year %in% seq(1963, 2019, 1) == FALSE) stop("Year out of range")
 
   #Setting up API call
   path <- "https://records.nhl.com/site/api/draft"
