@@ -7,7 +7,7 @@ test_team_stats_errors <- function(){
     expect_error(team_stats(start_season = 20192019))
   })
 }
-
+test_team_stats_errors()
 test_team_stats_returns <- function(){
   test_that("team_stats() function returns proper output" , {
     #Check to see that the function returns a data.frame object with no inputs
@@ -18,3 +18,4 @@ test_team_stats_returns <- function(){
     expect_equal(mean(team_stats()$seasonId), 20192020)
   })
 }
+test_team_stats_returns()
