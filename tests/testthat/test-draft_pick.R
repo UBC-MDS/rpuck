@@ -1,5 +1,5 @@
 library(testthat)
-library(rpuck)
+
 
 #' Tests the draft_pick function from rpuck package.
 
@@ -25,3 +25,4 @@ test_draft_pick <- function(){
     expect_equal(length(draft_pick(pick_number = 1)),554)
   })
 }
+test_draft_pick()

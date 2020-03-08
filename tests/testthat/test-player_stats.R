@@ -8,7 +8,7 @@ test_player_stats_errors <- function(){
     expect_error(player_stats(start_date = 2019))
   })
 }
-
+test_player_stats_errors()
 test_player_stats_returns <- function(){
   test_that("player_stats() function returns proper output" , {
     #Check to see that the function returns a data.frame object with no inputs
@@ -25,3 +25,4 @@ test_player_stats_returns <- function(){
     expect_equal(nrow(player_stats(start_date = '2019-10-02', end_date = '2019-12-05')), 100)
   })
 }
+test_player_stats_returns()
