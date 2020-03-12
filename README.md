@@ -7,6 +7,8 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/UBC-MDS/rpuck/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rpuck/actions)
 <!-- badges: end -->
 
 If you were to try and analyze statistics for your favorite hockey team,
