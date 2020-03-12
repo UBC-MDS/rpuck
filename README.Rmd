@@ -25,7 +25,7 @@ If you were to try and analyze statistics for your favorite hockey team, or try 
 ## Team
 
 | [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko ](https://github.com/PolinaRomanchenko)| [Manish Joshi](https://github.com/ManishPJoshi)|
-|:------------:|:--------------:|:--------------:|:--------------:|
+
 
 ## Installation
 

@@ -19,13 +19,14 @@ both relevant and historical statistics from the publicly available but
 as of yet undocumented NHL.com API. As of now the package has limited
 functionality, and is considered a work-in-progress. We will add in
 additional functionality in the coming weeks which can easily be
-extended based on feedback we
-recieve.
+extended based on feedback we recieve.
 
 ## Team
 
-| [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko](https://github.com/PolinaRomanchenko) | [Manish Joshi](https://github.com/ManishPJoshi) |
-| :--------------------------------------------: | :----------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------: |
+[Jarvis Nederlof](https://github.com/jnederlo) | [Xugang
+Zhong](https://github.com/chuusan) | [Polina
+Romanchenko](https://github.com/PolinaRomanchenko)| [Manish
+Joshi](https://github.com/ManishPJoshi)|
 
 ## Installation
 
