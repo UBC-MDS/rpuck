@@ -11,8 +11,8 @@
 #' If an end year is specified then the start year is also to be provided.
 #' Year input is to be provided in a 2 year format of 'YYYYYYYY'
 #'
-#' @param a string
-#' @param b string
+#' @param start_season string
+#' @param end_season string
 #'
 #' @return data.frame
 #' @export
