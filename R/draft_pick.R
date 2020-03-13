@@ -22,18 +22,20 @@
 #' @import testthat
 #' @import jsonlite
 #' @import dplyr
+#' @import scales
 #' @examples
 #' draft_pick(pick_number = 1, round_number = 2, year = '2019')
 
 draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
-
-  year <- if (is.null(year)) 2019 else year
+  
+  #  year <- if (is.null(year)) 2019 else year
   if (pick_number %in% seq(1,31,1) == FALSE) stop("Pick number out of range")
   if (is.null(round_number) == FALSE) {
     if (round_number %in% seq(1,25,1) == FALSE) stop("Round number out of range")
   }
-  if (year %in% seq(1963, 2019, 1) == FALSE) stop("Year out of range")
-
+  if (is.null(year) == FALSE) { 
+    if (year %in% seq(1963, 2019, 1) == FALSE) stop("Year out of range")
+  }
   #Setting up API call
   path <- "https://records.nhl.com/site/api/draft"
   request <- httr::GET(url = path)
@@ -52,15 +54,10 @@ draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
     df <- subset(df, Year == year & Pick_number == pick_number)
   }
   else {df <- subset(df, Pick_number == pick_number)}
-
-  if (nrow(df) == 0){
-    errorCondition()
-  }
   #Catching ecxeption cases in output
   if (nrow(df)==0){
     warning('Specified pick number didn`t exist in specified round or year')
     break
   }
-
   df
 }
