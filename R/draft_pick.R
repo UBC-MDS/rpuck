@@ -56,8 +56,7 @@ draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
   else {df <- subset(df, Pick_number == pick_number)}
   #Catching ecxeption cases in output
   if (nrow(df)==0){
-    warning('Specified pick number didn`t exist in specified round or year')
-    break
+    stop("Draft pick with specified parameters doesn't exist!")
   }
   df
 }
