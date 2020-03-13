@@ -58,7 +58,7 @@ devtools::install_github("UBC-MDS/rpuck")
   - `attendance(regular=True, playoffs=True, start_season=NULL,
     end_season=NULL)`:
       - The attendance() function makes a query to the Attendance API to
-        get the NHL’s seasonal and playoff attendance numbers. The
+        get the NHLвЂ™s seasonal and playoff attendance numbers. The
         function displays attendance numbers in a ggplot chart.
   - `team_stats(start_season=NULL, end_season=NULL)`:
       - The team\_stats() function makes an API call to the team summary

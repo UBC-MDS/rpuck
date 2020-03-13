@@ -48,7 +48,7 @@ devtools::install_github("UBC-MDS/rpuck")
 - `draft_pick(pick_number=NULL, round_number=NULL, year=NULL)`:
   - The draft_pick(pick_number=None, round_number=None, year=None) function makes an API call to the drafts summary on the NHL.com API. The function returns information about draft picks for the specified arguments and stores them in a data frame.
 - `attendance(regular=True, playoffs=True, start_season=NULL, end_season=NULL)`:
-  - The attendance() function makes a query to the Attendance API to get the NHL’s seasonal and playoff attendance numbers. The function displays attendance numbers in a ggplot chart.
+  - The attendance() function makes a query to the Attendance API to get the NHLвЂ™s seasonal and playoff attendance numbers. The function displays attendance numbers in a ggplot chart.
 - `team_stats(start_season=NULL, end_season=NULL)`:
   - The team_stats() function makes an API call to the team summary endpoint on the NHL.com API. The function returns team seasonal stats for given seasons sorted by total team points.
 - `player_stats(start_date=NULL, end_date=NULL)`:
