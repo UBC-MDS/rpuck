@@ -21,4 +21,9 @@ Imports:
     gridExtra,
     glue,
     tidyr,
-    testthat
+    testthat,
+    scales
+Suggests: 
+    covr
+URL: https://github.com/UBC-MDS/rpuck
+BugReports: https://github.com/UBC-MDS/rpuck/issues

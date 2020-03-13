@@ -7,6 +7,9 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/UBC-MDS/rpuck/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rpuck/actions)
+[![codecov](https://codecov.io/gh/UBC-MDS/rpuck/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rpuck)
 <!-- badges: end -->
 
 If you were to try and analyze statistics for your favorite hockey team,
@@ -19,13 +22,14 @@ both relevant and historical statistics from the publicly available but
 as of yet undocumented NHL.com API. As of now the package has limited
 functionality, and is considered a work-in-progress. We will add in
 additional functionality in the coming weeks which can easily be
-extended based on feedback we
-recieve.
+extended based on feedback we recieve.
 
 ## Team
 
-| [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko](https://github.com/PolinaRomanchenko) | [Manish Joshi](https://github.com/ManishPJoshi) |
-| :--------------------------------------------: | :----------------------------------------: | :--------------------------------------------------------: | :---------------------------------------------: |
+[Jarvis Nederlof](https://github.com/jnederlo) | [Xugang
+Zhong](https://github.com/chuusan) | [Polina
+Romanchenko](https://github.com/PolinaRomanchenko)| [Manish
+Joshi](https://github.com/ManishPJoshi)|
 
 ## Installation
 

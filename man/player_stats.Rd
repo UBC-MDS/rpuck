@@ -7,9 +7,9 @@
 player_stats(start_date = NULL, end_date = NULL)
 }
 \arguments{
-\item{a}{string}
+\item{start_date}{string}
 
-\item{b}{string}
+\item{end_date}{string}
 }
 \value{
 data.frame
