@@ -22,3 +22,7 @@ Imports:
     glue,
     tidyr,
     testthat
+Suggests: 
+    covr
+URL: https://github.com/UBC-MDS/rpuck
+BugReports: https://github.com/UBC-MDS/rpuck/issues
