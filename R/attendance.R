@@ -38,7 +38,7 @@ attendance <- function(regular = TRUE, playoffs = TRUE, start_season = NULL, end
   response <- httr::content(r, as = "text", encoding = "UTF-8")
   # import data
   df <- data.frame(jsonlite::fromJSON(response, flatten = TRUE)$data)
-  df <- rename(df, `playoffs` = `playoffAttendance`, `regular` = `regularAttendance`)
+  df <- rename(df, 'playoffs' = 'playoffAttendance', 'regular' = 'regularAttendance')
   df[is.na(df)] <- 0
 
   # Set the start and end dates to current season if NULL
