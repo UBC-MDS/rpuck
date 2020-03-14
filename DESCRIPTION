@@ -24,6 +24,9 @@ Imports:
     testthat,
     scales
 Suggests: 
-    covr
+    covr,
+    knitr,
+    rmarkdown
 URL: https://github.com/UBC-MDS/rpuck
 BugReports: https://github.com/UBC-MDS/rpuck/issues
+VignetteBuilder: knitr
