@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R build status](https://github.com/UBC-MDS/rpuck/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rpuck/actions) [![codecov](https://codecov.io/gh/UBC-MDS/rpuck/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rpuck)
+
 <!-- badges: end -->
 
 If you were to try and analyze statistics for your favorite hockey team, or try to predict an outcome of the next match you'd probably browse the internet in search of convenient tools to get the data you want from the NHL website. While there are a bunch of NHL API packages available in python, there is limited availability of many R packages. Therefore, the rpuck library is designed to allow users the ability to conveniently get both relevant and historical statistics from the publicly available but as of yet undocumented NHL.com API. As of now the package has limited functionality, and is considered a work-in-progress. We will add in additional functionality in the coming weeks which can easily be extended based on feedback we recieve.
