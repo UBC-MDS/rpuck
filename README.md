@@ -93,3 +93,4 @@ R version 3.6.1 and R packages:
 
   - knitr==1.26 \[@knitr\]
   - tidyverse==1.2.1 \[@tidyverse\]
+  - Json
