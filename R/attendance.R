@@ -18,7 +18,6 @@
 #'
 #' @import dplyr
 #' @import ggplot2
-#' @import gridExtra
 #' @import httr
 #' @import jsonlite
 #' @import tidyr
