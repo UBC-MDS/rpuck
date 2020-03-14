@@ -58,7 +58,7 @@ devtools::install_github("UBC-MDS/rpuck")
 - `player_stats(start_date=NULL, end_date=NULL)`:
   - The `player_stats( )` function makes an API call to the player summary endpoint on the NHL.com API. The function returns the top 100 player stats for a given date range as sorted by total points.
 
-## Usage
+## Usage Example
 
 The package can extract and visualize data from NHL statistics in convenient format. Below is an example of how one can use rpuck.
 

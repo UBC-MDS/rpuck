@@ -70,7 +70,7 @@ devtools::install_github("UBC-MDS/rpuck")
         top 100 player stats for a given date range as sorted by total
         points.
 
-## Usage
+## Usage Example
 
 The package can extract and visualize data from NHL statistics in
 convenient format. Below is an example of how one can use rpuck.
