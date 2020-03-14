@@ -46,8 +46,27 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/my-vignette.html">my-vignette</a>
+    </li>
+  </ul>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/UBC-MDS/rpuck">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -65,20 +84,13 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#rpuck" class="anchor"></a>rpuck</h1></div>
 <!-- badges: start -->
+
 <!-- badges: end -->
 <p>If you were to try and analyze statistics for your favorite hockey team, or try to predict an outcome of the next match you’d probably browse the internet in search of convenient tools to get the data you want from the NHL website. While there are a bunch of NHL API packages available in python, there is limited availability of many R packages. Therefore, the rpuck library is designed to allow users the ability to conveniently get both relevant and historical statistics from the publicly available but as of yet undocumented NHL.com API. As of now the package has limited functionality, and is considered a work-in-progress. We will add in additional functionality in the coming weeks which can easily be extended based on feedback we recieve.</p>
 <div id="team" class="section level2">
 <h2 class="hasAnchor">
 <a href="#team" class="anchor"></a>Team</h2>
-<table class="table">
-<thead><tr class="header">
-<th align="center"><a href="https://github.com/jnederlo">Jarvis Nederlof</a></th>
-<th align="center"><a href="https://github.com/chuusan">Xugang Zhong</a></th>
-<th align="center"><a href="https://github.com/PolinaRomanchenko">Polina Romanchenko</a></th>
-<th align="center"><a href="https://github.com/ManishPJoshi">Manish Joshi</a></th>
-</tr></thead>
-<tbody></tbody>
-</table>
+<p><a href="https://github.com/jnederlo">Jarvis Nederlof</a> | <a href="https://github.com/chuusan">Xugang Zhong</a> | <a href="https://github.com/PolinaRomanchenko">Polina Romanchenko</a>| <a href="https://github.com/ManishPJoshi">Manish Joshi</a>|</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -96,28 +108,49 @@
 <li>
 <code><a href="reference/draft_pick.html">draft_pick(pick_number=NULL, round_number=NULL, year=NULL)</a></code>:
 <ul>
-<li>The draft_pick(pick_number=None, round_number=None, year=None) function makes an API call to the drafts summary on the NHL.com API. The function returns information about draft picks for the specified arguments and stores them in a data frame.</li>
+<li>The <code><a href="reference/draft_pick.html">draft_pick( )</a></code> function makes an API call to the drafts summary on the NHL.com API. The function returns information about draft picks for the specified arguments and stores them in a data frame.</li>
 </ul>
 </li>
 <li>
 <code><a href="reference/attendance.html">attendance(regular=True, playoffs=True, start_season=NULL, end_season=NULL)</a></code>:
 <ul>
-<li>The attendance() function makes a query to the Attendance API to get the NHL’s seasonal and playoff attendance numbers. The function displays attendance numbers in a ggplot chart.</li>
+<li>The attendance( ) function makes a query to the Attendance API to get the seasonal and playoff attendance numbers. The function displays attendance numbers in a ggplot chart.</li>
 </ul>
 </li>
 <li>
 <code><a href="reference/team_stats.html">team_stats(start_season=NULL, end_season=NULL)</a></code>:
 <ul>
-<li>The team_stats() function makes an API call to the team summary endpoint on the NHL.com API. The function returns team seasonal stats for given seasons sorted by total team points.</li>
+<li>The <code><a href="reference/team_stats.html">team_stats( )</a></code> function makes an API call to the team summary endpoint on the NHL.com API. The function returns team seasonal stats for given seasons sorted by total team points.</li>
 </ul>
 </li>
 <li>
 <code><a href="reference/player_stats.html">player_stats(start_date=NULL, end_date=NULL)</a></code>:
 <ul>
-<li>The player_stats() function makes an API call to the player summary endpoint on the NHL.com API. The function returns the top 100 player stats for a given date range as sorted by total points.</li>
+<li>The <code><a href="reference/player_stats.html">player_stats( )</a></code> function makes an API call to the player summary endpoint on the NHL.com API. The function returns the top 100 player stats for a given date range as sorted by total points.</li>
 </ul>
 </li>
 </ul>
+</div>
+<div id="usage" class="section level2">
+<h2 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h2>
+<p>The package can extract and visualize data from NHL statistics in convenient format. Below is an example of how one can use rpuck.</p>
+<p>To load the package:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rpuck)</a></code></pre></div>
+<p>Get a chart showing the attendance over a specified time period:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">attendance &lt;-<span class="st"> </span><span class="kw"><a href="reference/attendance.html">attendance</a></span>(<span class="dt">regular=</span><span class="ot">TRUE</span>, <span class="dt">playoffs=</span><span class="ot">TRUE</span>, <span class="dt">start_season=</span> <span class="dv">2001</span>, <span class="dt">end_season=</span><span class="dv">2018</span>)</a></code></pre></div>
+<p><img src="img/attendance.png" alt="attendance"></p>
+<p>Result of draft by pick number, draft number and year in summary report:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">pick &lt;-<span class="st"> </span><span class="kw"><a href="reference/draft_pick.html">draft_pick</a></span>(<span class="dt">pick_number =</span> <span class="dv">1</span>, <span class="dt">round_number =</span> <span class="dv">2</span>, <span class="dt">year =</span> <span class="dv">2019</span>)</a></code></pre></div>
+<p><img src="img/draft.png" alt="draft"></p>
+<p>Query the top 100 player’s stats from the player’s summary report:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">player_s &lt;-<span class="st"> </span><span class="kw"><a href="reference/player_stats.html">player_stats</a></span>(<span class="dt">start_date =</span> <span class="st">"2019-10-02"</span>, <span class="dt">end_date =</span> <span class="st">"2020-02-28"</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(player_s)</a></code></pre></div>
+<p><img src="img/player_stat.png" alt="player_stat"></p>
+<p>Stats for teams specified by start year or start year and end year:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">attendance &lt;-<span class="st"> </span><span class="kw"><a href="reference/team_stats.html">team_stats</a></span>(<span class="dt">start_season =</span> <span class="st">"19801981"</span>, <span class="dt">end_season =</span> <span class="st">"19891990"</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(attendance)</a></code></pre></div>
+<p><img src="img/team_stat.png" alt="team_stat"></p>
 </div>
 <div id="tests" class="section level2">
 <h2 class="hasAnchor">
@@ -134,8 +167,16 @@
 <a href="#dependencies" class="anchor"></a>Dependencies</h2>
 <p>R version 3.6.1 and R packages:</p>
 <ul>
-<li>knitr==1.26 [@knitr]</li>
-<li>tidyverse==1.2.1 [@tidyverse]</li>
+<li>dplyr==0.8.3 [@dplyr]</li>
+<li>httr==1.4.1 [@httr]</li>
+<li>ggplot2==3.2.1 [@ggplot2]</li>
+<li>jsonlite==1.6 [@jsonlite]</li>
+<li>grid==3.6.2 [@grid]</li>
+<li>gridExtra==2.3 [@gridExtra]</li>
+<li>glue==1.3.1 [@glue]</li>
+<li>tidyr=1.0.0 [@tidyr]</li>
+<li>testthat==2.3.1 [@testthat]</li>
+<li>scales==1.0.0 [@scales]</li>
 </ul>
 </div>
 </div>
@@ -143,7 +184,16 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/UBC-MDS/rpuck">https://​github.com/​UBC-MDS/​rpuck</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/UBC-MDS/rpuck/issues">https://​github.com/​UBC-MDS/​rpuck/​issues</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
@@ -163,7 +213,14 @@
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/UBC-MDS/rpuck/actions"><img src="https://github.com/UBC-MDS/rpuck/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://codecov.io/gh/UBC-MDS/rpuck"><img src="https://codecov.io/gh/UBC-MDS/rpuck/branch/master/graph/badge.svg" alt="codecov"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
