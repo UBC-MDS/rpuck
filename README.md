@@ -37,16 +37,12 @@ Joshi](https://github.com/ManishPJoshi)|
 You can install the released version of rpuck from
 [CRAN](https://CRAN.R-project.org) with:
 
-``` r
-install.packages("rpuck")
-```
+    install.packages("rpuck")
 
 And the development version from [GitHub](https://github.com/) with:
 
-``` r
-# install.packages("devtools")
-devtools::install_github("UBC-MDS/rpuck")
-```
+    # install.packages("devtools")
+    devtools::install_github("UBC-MDS/rpuck")
 
 ## Features
 

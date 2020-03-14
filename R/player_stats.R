@@ -32,14 +32,14 @@ player_stats <- function(start_date = NULL, end_date = NULL) {
 
   # Create a variable for the start.date in datetime format
   start.date <- tryCatch( {
-      as.POSIXct(start_date, format = "%Y-%m-%d")
-    }, error = function(cond) {
-      message(glue::glue('Incorrect date format {start_date}, requires YYYY-MM-DD"'))
-      message(cond)
-      return(NA)
-    }, finally = {
-      as.POSIXct(start_date, format = "%Y-%m-%d")
-    })
+    as.POSIXct(start_date, format = "%Y-%m-%d")
+  }, error = function(cond) {
+    message(glue::glue('Incorrect date format {start_date}, requires YYYY-MM-DD"'))
+    message(cond)
+    return(NA)
+  }, finally = {
+    as.POSIXct(start_date, format = "%Y-%m-%d")
+  })
 
   # Create a variable for the end.date in datetime format
   end.date <- tryCatch( {
