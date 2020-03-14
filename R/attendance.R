@@ -68,7 +68,7 @@ attendance <- function(regular = TRUE, playoffs = TRUE, start_season = NULL, end
   if (regular == TRUE && playoffs == TRUE){
     #plot regular and playoff attendance separately as requested
     data <- gather(df,key='type',value='attendance',playoffs:regular)
-    plot <- ggplot(data, aes(x= seasonId, y=attendance))+
+    plot <- ggplot(data, aes(x= season_chr, y=attendance))+
       geom_bar(stat ='identity')+
       scale_y_continuous(labels = scales::comma)+
       facet_wrap(~type, scales='free')+

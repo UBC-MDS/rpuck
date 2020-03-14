@@ -51,70 +51,127 @@ devtools::install_github("UBC-MDS/rpuck")
 ## Features
 
   - `draft_pick(pick_number=NULL, round_number=NULL, year=NULL)`:
-      - The draft\_pick(pick\_number=None, round\_number=None,
-        year=None) function makes an API call to the drafts summary on
-        the NHL.com API. The function returns information about draft
-        picks for the specified arguments and stores them in a data
-        frame.
+      - The `draft_pick( )` function makes an API call to the drafts
+        summary on the NHL.com API. The function returns information
+        about draft picks for the specified arguments and stores them in
+        a data frame.
   - `attendance(regular=True, playoffs=True, start_season=NULL,
     end_season=NULL)`:
-      - The attendance() function makes a query to the Attendance API to
-        get the NHLвЂ™s seasonal and playoff attendance numbers. The
-        function displays attendance numbers in a ggplot chart.
+      - The attendance( ) function makes a query to the Attendance API
+        to get the seasonal and playoff attendance numbers. The function
+        displays attendance numbers in a ggplot chart.
   - `team_stats(start_season=NULL, end_season=NULL)`:
-      - The team\_stats() function makes an API call to the team summary
-        endpoint on the NHL.com API. The function returns team seasonal
-        stats for given seasons sorted by total team points.
+      - The `team_stats( )` function makes an API call to the team
+        summary endpoint on the NHL.com API. The function returns team
+        seasonal stats for given seasons sorted by total team points.
   - `player_stats(start_date=NULL, end_date=NULL)`:
-      - The player\_stats() function makes an API call to the player
+      - The `player_stats( )` function makes an API call to the player
         summary endpoint on the NHL.com API. The function returns the
         top 100 player stats for a given date range as sorted by total
         points.
 
-## Usage
+## Usage Example
 
 The package can extract and visualize data from NHL statistics in
 convenient format. Below is an example of how one can use rpuck.
 
 To load the package:
 
-``` r
-library(rpuck)
-```
-
-Get a chart showing the attendance over a specified time period:
+Get a chart showing the attendance over a specified time
+period:
 
 ``` r
-attendance <- attendance(regular=TRUE, playoffs=TRUE, start_season= 2000, end_season=2018)
+attendance(regular=TRUE, playoffs=FALSE, start_season= 1990, end_season=2018)
 ```
 
-![attendance](img/attendance-1.png)
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 Result of draft by pick number, draft number and year in summary report:
 
 ``` r
-pick <- draft_pick(pick_number = 1, round_number = 2, year = 2019)
+draft_pick(pick_number = 1, round_number = 2, year = 2019)
+#>            Player triCode Pick_number Round_number Year
+#> 11402 Shane Pinto     OTT           1            2 2019
 ```
 
-![draft](img/draft.png)
-
-Query the top 100 player’s stats from the player’s summary report:
+Query the top 100 player’s stats from the player’s summary
+report:
 
 ``` r
 player_s <- player_stats(start_date = "2019-10-02", end_date = "2020-02-28")
 head(player_s)
+#>   assists evGoals evPoints faceoffWinPct gameWinningGoals gamesPlayed goals
+#> 1      62      24       59       0.51809               10          64    37
+#> 2      44      27       54       0.37500                9          65    46
+#> 3      56      25       67       0.50000                4          63    32
+#> 4      56      20       48       0.47892                5          58    31
+#> 5      52      23       56       0.42693                4          63    33
+#> 6      55      20       52       0.40816                5          65    26
+#>    lastName otGoals penaltyMinutes playerId plusMinus points pointsPerGame
+#> 1 Draisaitl       2             16  8477934       -11     99       1.54687
+#> 2  Pastrnak       1             34  8477956        20     90       1.38461
+#> 3   Panarin       0             18  8478550        35     88       1.39682
+#> 4   McDavid       0             28  8478402        -7     87       1.50000
+#> 5 MacKinnon       2             12  8477492         9     85       1.34920
+#> 6  Marchand       0             72  8473419        24     81       1.24615
+#>   positionCode ppGoals ppPoints shGoals shPoints shootingPct shootsCatches
+#> 1            C      13       40       0        0     0.18686             L
+#> 2            R      19       36       0        0     0.18039             R
+#> 3            L       7       21       0        0     0.16494             R
+#> 4            C      11       39       0        0     0.16062             L
+#> 5            C      10       29       0        0     0.11262             R
+#> 6            L       5       26       1        3     0.14857             L
+#>   shots   skaterFullName timeOnIcePerGame
+#> 1   198   Leon Draisaitl         1361.516
+#> 2   255   David Pastrnak         1146.369
+#> 3   194   Artemi Panarin         1219.460
+#> 4   193   Connor McDavid         1323.000
+#> 5   293 Nathan MacKinnon         1278.889
+#> 6   175    Brad Marchand         1178.246
 ```
 
-![player\_stat](img/player_stat.png)
-
-Stats for teams specified by start year or start year and end year:
+Stats for teams specified by start year or start year and end
+year:
 
 ``` r
 attendance <- team_stats(start_season = "19801981", end_season = "19891990")
 head(attendance)
+#>   faceoffWinPct gamesPlayed goalsAgainst goalsAgainstPerGame goalsFor
+#> 1            NA          80          338              4.2250      230
+#> 2            NA          80          336              4.2000      343
+#> 3            NA          80          317              3.9625      321
+#> 4            NA          80          287              3.5875      306
+#> 5            NA          80          394              4.9250      257
+#> 6            NA          80          333              4.1625      311
+#>   goalsForPerGame losses otLosses penaltyKillNetPct penaltyKillPct pointPct
+#> 1          2.8750     49       NA          0.757679       0.733789  0.30000
+#> 2          4.2875     34       NA          0.751445       0.734105  0.50000
+#> 3          4.0125     34       NA          0.798449       0.771318  0.48750
+#> 4          3.8250     35       NA          0.792880       0.754046  0.50000
+#> 5          3.2125     53       NA          0.732323       0.724748  0.28125
+#> 6          3.8875     39       NA          0.767068       0.730924  0.46250
+#>   points powerPlayNetPct powerPlayPct regulationAndOtWins seasonId
+#> 1     48        0.182119     0.215231                  17 19821983
+#> 2     80        0.185185     0.205387                  34 19821983
+#> 3     78        0.216117     0.238095                  32 19821983
+#> 4     80        0.203821     0.229299                  35 19821983
+#> 5     45        0.183333     0.225000                  18 19821983
+#> 6     74        0.208459     0.229607                  33 19821983
+#>   shotsAgainstPerGame shotsForPerGame         teamFullName teamId ties wins
+#> 1             32.0875         25.6875    New Jersey Devils      1   14   17
+#> 2             32.5375         28.9125     Quebec Nordiques     32   12   34
+#> 3             33.0875         28.5875       Calgary Flames     20   14   32
+#> 4             29.8000         28.5250     New York Rangers      3   10   35
+#> 5             32.6875         30.2250  Pittsburgh Penguins      5    9   18
+#> 6             31.6375         31.7625 Winnipeg Jets (1979)     33    8   33
+#>   winsInRegulation winsInShootout
+#> 1               17              0
+#> 2               34              0
+#> 3               32              0
+#> 4               35              0
+#> 5               18              0
+#> 6               33              0
 ```
-
-![team\_stat](img/team_stat.png)
 
 ## Tests
 

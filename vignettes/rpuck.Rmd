@@ -1,33 +1,25 @@
 ---
-output: github_document
+title: "rpuck"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{rpuck}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  comment = "#>"
 )
 ```
 
-<img src="img/rpuck_logo.png" width="150" align = "right">
-
-# rpuck
-
-<!-- badges: start -->
-[![R build status](https://github.com/UBC-MDS/rpuck/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rpuck/actions) [![codecov](https://codecov.io/gh/UBC-MDS/rpuck/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rpuck)
-
-<!-- badges: end -->
 
 If you were to try and analyze statistics for your favorite hockey team, or try to predict an outcome of the next match you'd probably browse the internet in search of convenient tools to get the data you want from the NHL website. While there are a bunch of NHL API packages available in python, there is limited availability of many R packages. Therefore, the rpuck library is designed to allow users the ability to conveniently get both relevant and historical statistics from the publicly available but as of yet undocumented NHL.com API. As of now the package has limited functionality, and is considered a work-in-progress. We will add in additional functionality in the coming weeks which can easily be extended based on feedback we recieve.
 
 ## Team
 
 | [Jarvis Nederlof](https://github.com/jnederlo) | [Xugang Zhong](https://github.com/chuusan) | [Polina Romanchenko ](https://github.com/PolinaRomanchenko)| [Manish Joshi](https://github.com/ManishPJoshi)|
-
 
 ## Installation
 
@@ -39,7 +31,7 @@ install.packages("rpuck")
 
 And the development version from [GitHub](https://github.com/) with:
 
-```r
+``` r
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/rpuck")
 ```
@@ -58,80 +50,52 @@ devtools::install_github("UBC-MDS/rpuck")
 - `player_stats(start_date=NULL, end_date=NULL)`:
   - The `player_stats( )` function makes an API call to the player summary endpoint on the NHL.com API. The function returns the top 100 player stats for a given date range as sorted by total points.
 
-## Usage Example
-
-The package can extract and visualize data from NHL statistics in convenient format. Below is an example of how one can use rpuck.
-
-To load the package: 
-
-```{r, warning=FALSE, echo=FALSE}
-library(rpuck)
-```
-
-Get a chart showing the attendance over a specified time period:
-
-```{r}
-attendance(regular=TRUE, playoffs=FALSE, start_season= 1990, end_season=2018)
-```
-
-
-Result of draft by pick number, draft number and year in summary report:
-
-```{r}
-draft_pick(pick_number = 1, round_number = 2, year = 2019)
-```
-
-
-Query the top 100 player's stats from the player's summary report:
-
-```{r}
-player_s <- player_stats(start_date = "2019-10-02", end_date = "2020-02-28")
-head(player_s)
-```
-
-
-Stats for teams specified by start year or start year and end year:
-
-```{r}
-attendance <- team_stats(start_season = "19801981", end_season = "19891990")
-head(attendance)
-```
-  
 ## Usage
 
 The package can extract and visualize data from NHL statistics in convenient format. Below is an example of how one can use rpuck.
 
 To load the package: 
+
 ```r
 library(rpuck)
 ```
 
 Get a chart showing the attendance over a specified time period:
+
 ```r
-attendance <- attendance(regular=TRUE, playoffs=TRUE, start_season= 2000, end_season=2018)
+attendance <- attendance(regular=TRUE, playoffs=TRUE, start_season= 2001, end_season=2018)
 ```
-![attendance](img/attendance-1.png)
+
+![attendance](../img/attendance.png)
 
 Result of draft by pick number, draft number and year in summary report:
+
 ```r
 pick <- draft_pick(pick_number = 1, round_number = 2, year = 2019)
 ```
-![draft](img/draft.png)
+
+![draft](../img/draft.png)
 
 Query the top 100 player's stats from the player's summary report:
+
 ```r
 player_s <- player_stats(start_date = "2019-10-02", end_date = "2020-02-28")
 head(player_s)
 ```
-![player_stat](img/player_stat.png)
+
+![player_stat](../img/player_stat.png)
 
 Stats for teams specified by start year or start year and end year:
+
 ```r
 attendance <- team_stats(start_season = "19801981", end_season = "19891990")
 head(attendance)
 ```
-![team_stat](img/team_stat.png)
 
+![team_stat](../img/team_stat.png)
+  
+
+  
 ## Tests
 
 We have included a variety of tests for each function in the `tests\testthat` directory. The tests check that the functions error gracefully and that proper function calls return the correct data/objects.
@@ -153,8 +117,6 @@ R version 3.6.1 and R packages:
 - glue==1.3.1 [@glue]
 - tidyr=1.0.0 [@tidyr]
 - testthat==2.3.1 [@testthat]
-<<<<<<< HEAD
 - scales==1.0.0 [@scales]
-=======
-- scales==1.0.0 [@scales]
->>>>>>> 22768bbe0a0da135b578beed8a632d0f97ca59bd
+
+
