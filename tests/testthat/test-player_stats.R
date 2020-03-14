@@ -6,6 +6,12 @@ test_player_stats_errors <- function(){
     expect_error(player_stats(start_date = '2020-02-28', end_date = '2019-10-02'))
     #Check to see that function errors when argument type is wrong
     expect_error(player_stats(start_date = 2019))
+    #Check to see that function errors when argument type is wrong
+    expect_error(player_stats(start_date = '2020-02-28', end_date = 2019))
+    #Start_date in wrong format
+    expect_error(player_stats(start_date = '2019-13-02', end_date = '2020-02-02'))
+    #End_date in wrong format
+    expect_error(player_stats(start_date = '2019-10-30', end_date = '2020-15-02'))
   })
 }
 test_player_stats_errors()
