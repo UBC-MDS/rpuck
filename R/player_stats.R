@@ -17,7 +17,6 @@
 #' @return data.frame
 #' @export
 #' @import httr
-#' @import glue
 #' @import jsonlite
 #' @examples
 #' player_stats(start_date = "2019-10-02", end_date = "2020-02-28")

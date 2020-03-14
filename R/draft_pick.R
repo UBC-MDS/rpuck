@@ -15,11 +15,9 @@
 #' @param year str containing a year from 1963 to 2019
 #'
 #' @return data.frame
-#' @import testthat
 #'
 #' @export
 #' @import httr
-#' @import testthat
 #' @import jsonlite
 #' @import dplyr
 #' @import scales
@@ -27,13 +25,13 @@
 #' draft_pick(pick_number = 1, round_number = 2, year = '2019')
 
 draft_pick <- function(pick_number = 1, round_number = NULL, year = NULL) {
-  
+
   #  year <- if (is.null(year)) 2019 else year
   if (pick_number %in% seq(1,31,1) == FALSE) stop("Pick number out of range")
   if (is.null(round_number) == FALSE) {
     if (round_number %in% seq(1,25,1) == FALSE) stop("Round number out of range")
   }
-  if (is.null(year) == FALSE) { 
+  if (is.null(year) == FALSE) {
     if (year %in% seq(1963, 2019, 1) == FALSE) stop("Year out of range")
   }
   #Setting up API call

@@ -10,6 +10,7 @@
 [![R build
 status](https://github.com/UBC-MDS/rpuck/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rpuck/actions)
 [![codecov](https://codecov.io/gh/UBC-MDS/rpuck/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rpuck)
+
 <!-- badges: end -->
 
 If you were to try and analyze statistics for your favorite hockey team,
@@ -92,3 +93,4 @@ R version 3.6.1 and R packages:
 
   - knitr==1.26 \[@knitr\]
   - tidyverse==1.2.1 \[@tidyverse\]
+  - Json

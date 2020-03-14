@@ -16,7 +16,6 @@
 #'
 #' @return data.frame
 #' @export
-#' @import glue
 #' @import httr
 #' @import jsonlite
 #' @examples
