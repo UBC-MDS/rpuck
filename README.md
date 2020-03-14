@@ -51,25 +51,72 @@ devtools::install_github("UBC-MDS/rpuck")
 ## Features
 
   - `draft_pick(pick_number=NULL, round_number=NULL, year=NULL)`:
-      - The draft\_pick(pick\_number=None, round\_number=None,
-        year=None) function makes an API call to the drafts summary on
-        the NHL.com API. The function returns information about draft
-        picks for the specified arguments and stores them in a data
-        frame.
+      - The `draft_pick( )` function makes an API call to the drafts
+        summary on the NHL.com API. The function returns information
+        about draft picks for the specified arguments and stores them in
+        a data frame.
   - `attendance(regular=True, playoffs=True, start_season=NULL,
     end_season=NULL)`:
-      - The attendance() function makes a query to the Attendance API to
-        get the NHL’s seasonal and playoff attendance numbers. The
+      - The attendance( ) function makes a query to the Attendance API
+        to get the NHL’s seasonal and playoff attendance numbers. The
         function displays attendance numbers in a ggplot chart.
   - `team_stats(start_season=NULL, end_season=NULL)`:
-      - The team\_stats() function makes an API call to the team summary
-        endpoint on the NHL.com API. The function returns team seasonal
-        stats for given seasons sorted by total team points.
+      - The `team_stats( )` function makes an API call to the team
+        summary endpoint on the NHL.com API. The function returns team
+        seasonal stats for given seasons sorted by total team points.
   - `player_stats(start_date=NULL, end_date=NULL)`:
-      - The player\_stats() function makes an API call to the player
+      - The `player_stats( )` function makes an API call to the player
         summary endpoint on the NHL.com API. The function returns the
         top 100 player stats for a given date range as sorted by total
         points.
+
+## Usage
+
+The package can extract and visualize data from NHL statistics in
+convenient format. Below is an example of how one can use rpuck.
+
+To load the package:
+
+``` r
+library(rpuck)
+```
+
+Get a chart showing the attendance over a specified time
+period:
+
+``` r
+attendance <- attendance(regular=TRUE, playoffs=TRUE, start_season= 2001, end_season=2018)
+```
+
+![attendance](img/attendance.png)
+
+Result of draft by pick number, draft number and year in summary report:
+
+``` r
+pick <- draft_pick(pick_number = 1, round_number = 2, year = 2019)
+```
+
+![draft](img/draft.png)
+
+Query the top 100 player’s stats from the player’s summary
+report:
+
+``` r
+player_s <- player_stats(start_date = "2019-10-02", end_date = "2020-02-28")
+head(player_s)
+```
+
+![player\_stat](img/player_stat.png)
+
+Stats for teams specified by start year or start year and end
+year:
+
+``` r
+attendance <- team_stats(start_season = "19801981", end_season = "19891990")
+head(attendance)
+```
+
+![team\_stat](img/team_stat.png)
 
 ## Tests
 
@@ -91,6 +138,17 @@ its own niche with compared with such libraries as
 
 R version 3.6.1 and R packages:
 
-  - knitr==1.26 \[@knitr\]
-  - tidyverse==1.2.1 \[@tidyverse\]
-  - Json
+## Dependencies
+
+R version 3.6.1 and R packages:
+
+  - dplyr==0.8.3 \[@dplyr\]
+  - httr==1.4.1 \[@httr\]
+  - ggplot2==3.2.1 \[@ggplot2\]
+  - jsonlite==1.6 \[@jsonlite\]
+  - grid==3.6.2 \[@grid\]
+  - gridExtra==2.3 \[@gridExtra\]
+  - glue==1.3.1 \[@glue\]
+  - tidyr=1.0.0 \[@tidyr\]
+  - testthat==2.3.1 \[@testthat\]
+  - scales==1.0.0 \[@scales\]
