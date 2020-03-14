@@ -8,13 +8,11 @@
 
 <title>player_stats — player_stats • rpuck</title>
 
-
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -34,12 +32,11 @@
 
 
 
-
 <meta property="og:title" content="player_stats — player_stats" />
+
 <meta property="og:description" content="Query the top 100 player's stats (sorted by total points)
 from the player's summary report endpoint on the NHL.com API." />
 <meta name="twitter:card" content="summary" />
-
 
 
 
@@ -83,6 +80,9 @@ from the player's summary report endpoint on the NHL.com API." />
   </a>
 </li>
 <li>
+  <a href="../articles/rpuck.html">Get started</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -93,11 +93,12 @@ from the player's summary report endpoint on the NHL.com API." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/my-vignette.html">my-vignette</a>
+      <a href="../articles/rpuck-vignette.html">rpuck-vignette</a>
     </li>
   </ul>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/UBC-MDS/rpuck">
@@ -124,12 +125,14 @@ from the player's summary report endpoint on the NHL.com API." />
     </div>
 
     <div class="ref-description">
+    
     <p>Query the top 100 player's stats (sorted by total points)
 from the player's summary report endpoint on the NHL.com API.</p>
+    
     </div>
 
     <pre class="usage"><span class='fu'>player_stats</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-
+    
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -142,10 +145,11 @@ from the player's summary report endpoint on the NHL.com API.</p>
       <td><p>string</p></td>
     </tr>
     </table>
-
+    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>data.frame</p>
+    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The stats are queried on an aggregated game-by-game basis
@@ -154,6 +158,7 @@ return the player's stats for the current season. The stats to be
 returned are restricted to the regular season.</p>
 <p>The function will return the current season's stats if the arguments
 are blank (i.e. left as None).</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>player_stats</span>(<span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"2019-10-02"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='st'>"2020-02-28"</span>)</div></pre>
@@ -162,8 +167,11 @@ are blank (i.e. left as None).</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      
       <li><a href="#value">Value</a></li>
+
       <li><a href="#details">Details</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
