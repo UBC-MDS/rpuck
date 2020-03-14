@@ -138,10 +138,6 @@ its own niche with compared with such libraries as
 
 R version 3.6.1 and R packages:
 
-## Dependencies
-
-R version 3.6.1 and R packages:
-
   - dplyr==0.8.3 \[@dplyr\]
   - httr==1.4.1 \[@httr\]
   - ggplot2==3.2.1 \[@ggplot2\]
