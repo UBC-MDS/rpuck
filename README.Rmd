@@ -140,21 +140,18 @@ We have included a variety of tests for each function in the `tests\testthat` di
 
 There are some packages written in the R language that are focused on providing a user with convenient tools to access statistics from NHL.com with API calls and helping to make sense of them. Rpuck is landing in its own niche with compared with such libraries as [nhlapi](https://github.com/zamorarr/nhlapi), [nhlscrape](https://cran.r-project.org/web/packages/nhlscrape/index.html). 
 
-
-## Dependencies
+### Dependencies
 R version 3.6.1 and R packages:
 
-- dplyr==0.8.3 [@dplyr]
-- httr==1.4.1 [@httr]
-- ggplot2==3.2.1 [@ggplot2]
-- jsonlite==1.6 [@jsonlite]
-- grid==3.6.2 [@grid]
-- gridExtra==2.3 [@gridExtra]
-- glue==1.3.1 [@glue]
-- tidyr=1.0.0 [@tidyr]
-- testthat==2.3.1 [@testthat]
-<<<<<<< HEAD
-- scales==1.0.0 [@scales]
-=======
-- scales==1.0.0 [@scales]
->>>>>>> 22768bbe0a0da135b578beed8a632d0f97ca59bd
+| Package                                                  	| Minimum Supported Version 	|
+|----------------------------------------------------------	|---------------------------	|
+| [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html)                      | 0.8.3                     	|
+| [httr](https://cran.r-project.org/web/packages/httr/index.html)    | 1.4.1                    	|
+| [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html)            | 3.2.1                     	|
+| [jsonlite](https://cran.r-project.org/web/packages/jsonlite/index.html) | 1.6 |
+| [grid](https://www.rdocumentation.org/packages/grid/versions/3.6.2) | 3.6.2 |
+| [gridExtra](https://cran.r-project.org/web/packages/gridExtra/index.html) | 2.3 |
+| [glue](https://cran.r-project.org/web/packages/glue/index.html) | 1.3.1 |
+| [tidyr](https://cran.r-project.org/web/packages/tidyr/index.html) | 1.0.0 |
+| [testthat](https://cran.r-project.org/web/packages/testthat/index.html) | 2.3.1 |
+| [scales](https://cran.r-project.org/web/packages/scales/index.html) | 1.0.0 | 
