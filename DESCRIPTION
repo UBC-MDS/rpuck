@@ -1,13 +1,13 @@
 Package: rpuck
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Version: 1.1.0
 Authors@R: 
     person(given = "Kirk",
            family = "Zhong",
            role = c("aut", "cre"),
            email = "chuusankirk@hotmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package provides wrapper functions to access the publicly available but undocumented NHL.com API.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

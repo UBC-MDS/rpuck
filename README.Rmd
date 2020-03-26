@@ -31,13 +31,7 @@ If you were to try and analyze statistics for your favorite hockey team, or try 
 
 ## Installation
 
-You can install the released version of rpuck from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("rpuck")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version of rpuck from [GitHub](https://github.com/) with:
 
 ```r
 # install.packages("devtools")
@@ -57,6 +51,8 @@ devtools::install_github("UBC-MDS/rpuck")
   
 - `player_stats(start_date=NULL, end_date=NULL)`:
   - The `player_stats( )` function makes an API call to the player summary endpoint on the NHL.com API. The function returns the top 100 player stats for a given date range as sorted by total points.
+
+You can also find function descriptions and their use cases in [package vignettes](https://ubc-mds.github.io/rpuck/articles/rpuck-vignette.html)
 
 ## Usage Example
 
@@ -127,8 +123,8 @@ head(player_s)
 
 Stats for teams specified by start year or start year and end year:
 ```r
-attendance <- team_stats(start_season = "19801981", end_season = "19891990")
-head(attendance)
+team_stat <- team_stats(start_season = "19801981", end_season = "19891990")
+head(team_stat)
 ```
 ![team_stat](img/team_stat.png)
 

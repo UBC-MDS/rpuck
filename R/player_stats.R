@@ -58,6 +58,13 @@ player_stats <- function(start_date = NULL, end_date = NULL) {
   # Check that the start date is earlier than the end date
   if (start.date > end.date) stop("'start_date' must be a date occuring earlier than 'end_date'")
 
+  # Check that the start date is in valid range
+  if (start.date < as.POSIXct('1917-12-19', format = "%Y-%m-%d")) stop("'start_date' must be later than '1917-12-19")
+  
+  # Check that end date is in valid range
+  if (end.date > as.POSIXct(Sys.Date(), format = "%Y-%m-%d")) warning("'end_date' input as future date, returning stats as of today")
+  
+  
   # Define the base URL
   url <- 'https://api.nhle.com/stats/rest/en/skater/summary?
           isAggregate=true&

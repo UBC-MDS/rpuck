@@ -24,7 +24,7 @@ test_attendance <- function(){
                  regexp = "You must select at least one attendance type")
   })
 
-  test_that("Error message should be expected if regular is set to non_logical value", {
+  test_that("Error message should be expected if playoffs is set to non_logical value", {
     expect_error(attendance(regular = TRUE, playoffs = 1, start_season = 1996, end_season = 2000),
                  regexp = "Regular and playoffs must be logical values!")
   })
