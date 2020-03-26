@@ -54,6 +54,13 @@ devtools::install_github("UBC-MDS/rpuck")
 
 You can also find function descriptions and their use cases in [package vignettes](https://ubc-mds.github.io/rpuck/articles/rpuck-vignette.html)
 
+
+## Documentations
+
+- [Github Page](https://ubc-mds.github.io/rpuck/)
+- [Vignettes](https://ubc-mds.github.io/rpuck/articles/rpuck-vignette.html)
+
+
 ## Usage Example
 
 The package can extract and visualize data from NHL statistics in convenient format. Below is an example of how one can use rpuck.
