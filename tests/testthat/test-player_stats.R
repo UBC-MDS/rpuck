@@ -12,6 +12,10 @@ test_player_stats_errors <- function(){
     expect_error(player_stats(start_date = '2019-13-02', end_date = '2020-02-02'))
     #End_date in wrong format
     expect_error(player_stats(start_date = '2019-10-30', end_date = '2020-15-02'))
+    #Start_date is earlier than allowed
+    expect_error(player_stats(start_date = '1917-10-30', end_date = '2010-12-20'))
+    #End_date is beyond available dates - should warn
+    expect_warning(player_stats(start_date = '2019-10-20', end_date = '2021-12-20'))
   })
 }
 test_player_stats_errors()
