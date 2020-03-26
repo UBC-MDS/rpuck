@@ -12,13 +12,13 @@ attendance(
 )
 }
 \arguments{
-\item{regular}{boolean}
+\item{regular}{boolean: whether to return regular attendance}
 
-\item{playoffs}{boolean}
+\item{playoffs}{boolean: whether to return playoffs attendance}
 
-\item{start_season}{integer}
+\item{start_season}{integer: the start season}
 
-\item{end_season}{integer}
+\item{end_season}{integer: the end season}
 }
 \value{
 a ggplot object

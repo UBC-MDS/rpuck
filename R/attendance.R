@@ -9,10 +9,10 @@
 #'
 #
 #'
-#' @param regular boolean
-#' @param playoffs boolean
-#' @param start_season integer
-#' @param end_season integer
+#' @param regular boolean: whether to return regular attendance
+#' @param playoffs boolean: whether to return playoffs attendance
+#' @param start_season integer: the start season
+#' @param end_season integer: the end season
 #'
 #' @return a ggplot object
 #'

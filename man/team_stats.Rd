@@ -7,9 +7,9 @@
 team_stats(start_season = NULL, end_season = NULL)
 }
 \arguments{
-\item{start_season}{string}
+\item{start_season}{string: the start season}
 
-\item{end_season}{string}
+\item{end_season}{string: the end season}
 }
 \value{
 data.frame
