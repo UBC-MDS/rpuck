@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rpuck</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -93,21 +93,25 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rpuck)</span></code></pre></div>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<div id="rpuck" class="section level1">
+<h1 class="hasAnchor">
+<a href="#rpuck" class="anchor"></a>rpuck</h1>
+<!-- badges: start -->
+<p><a href="https://github.com/UBC-MDS/rpuck/actions"><img src="https://github.com/UBC-MDS/rpuck/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://codecov.io/gh/UBC-MDS/rpuck"><img src="https://codecov.io/gh/UBC-MDS/rpuck/branch/master/graph/badge.svg" alt="codecov"></a></p>
+<!-- badges: end -->
 <p>If you were to try and analyze statistics for your favorite hockey team, or try to predict an outcome of the next match you’d probably browse the internet in search of convenient tools to get the data you want from the NHL website. While there are a bunch of NHL API packages available in python, there is limited availability of many R packages. Therefore, the rpuck library is designed to allow users the ability to conveniently get both relevant and historical statistics from the publicly available but as of yet undocumented NHL.com API. As of now the package has limited functionality, and is considered a work-in-progress. We will add in additional functionality in the coming weeks which can easily be extended based on feedback we recieve.</p>
 <div id="team" class="section level2">
 <h2 class="hasAnchor">
 <a href="#team" class="anchor"></a>Team</h2>
-<div class="line-block">
-<a href="https://github.com/jnederlo">Jarvis Nederlof</a> | <a href="https://github.com/chuusan">Xugang Zhong</a> | <a href="https://github.com/PolinaRomanchenko">Polina Romanchenko</a>| <a href="https://github.com/ManishPJoshi">Manish Joshi</a>|</div>
+<p><a href="https://github.com/jnederlo">Jarvis Nederlof</a> | <a href="https://github.com/chuusan">Xugang Zhong</a> | <a href="https://github.com/PolinaRomanchenko">Polina Romanchenko</a>| <a href="https://github.com/ManishPJoshi">Manish Joshi</a>|</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of rpuck from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"rpuck"</span>)</span></code></pre></div>
-<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"UBC-MDS/rpuck"</span>)</span></code></pre></div>
+<p>You can install the development version of rpuck from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"UBC-MDS/rpuck"</span>)</span></code></pre></div>
 </div>
 <div id="features" class="section level2">
 <h2 class="hasAnchor">
@@ -139,34 +143,87 @@
 </li>
 </ul>
 </div>
-<div id="usage" class="section level2">
+<div id="usage-example" class="section level2">
 <h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<a href="#usage-example" class="anchor"></a>Usage Example</h2>
 <p>The package can extract and visualize data from NHL statistics in convenient format. Below is an example of how one can use rpuck.</p>
 <p>To load the package:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rpuck)</span></code></pre></div>
 <p>Get a chart showing the attendance over a specified time period:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>attendance &lt;-<span class="st"> </span><span class="kw"><a href="../reference/attendance.html">attendance</a></span>(<span class="dt">regular=</span><span class="ot">TRUE</span>, <span class="dt">playoffs=</span><span class="ot">TRUE</span>, <span class="dt">start_season=</span> <span class="dv">2001</span>, <span class="dt">end_season=</span><span class="dv">2018</span>)</span></code></pre></div>
-<div class="figure">
-<img src="../img/attendance.png" alt=""><p class="caption">attendance</p>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="../reference/attendance.html">attendance</a></span>(<span class="dt">regular=</span><span class="ot">TRUE</span>, <span class="dt">playoffs=</span><span class="ot">FALSE</span>, <span class="dt">start_season=</span> <span class="dv">1990</span>, <span class="dt">end_season=</span><span class="dv">2018</span>)</span></code></pre></div>
+<p><img src="man/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
 <p>Result of draft by pick number, draft number and year in summary report:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>pick &lt;-<span class="st"> </span><span class="kw"><a href="../reference/draft_pick.html">draft_pick</a></span>(<span class="dt">pick_number =</span> <span class="dv">1</span>, <span class="dt">round_number =</span> <span class="dv">2</span>, <span class="dt">year =</span> <span class="dv">2019</span>)</span></code></pre></div>
-<div class="figure">
-<img src="../img/draft.png" alt=""><p class="caption">draft</p>
-</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw"><a href="../reference/draft_pick.html">draft_pick</a></span>(<span class="dt">pick_number =</span> <span class="dv">1</span>, <span class="dt">round_number =</span> <span class="dv">2</span>, <span class="dt">year =</span> <span class="dv">2019</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt;            Player triCode Pick_number Round_number Year</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; 11402 Shane Pinto     OTT           1            2 2019</span></span></code></pre></div>
 <p>Query the top 100 player’s stats from the player’s summary report:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>player_s &lt;-<span class="st"> </span><span class="kw"><a href="../reference/player_stats.html">player_stats</a></span>(<span class="dt">start_date =</span> <span class="st">"2019-10-02"</span>, <span class="dt">end_date =</span> <span class="st">"2020-02-28"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(player_s)</span></code></pre></div>
-<div class="figure">
-<img src="../img/player_stat.png" alt=""><p class="caption">player_stat</p>
-</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>player_s &lt;-<span class="st"> </span><span class="kw"><a href="../reference/player_stats.html">player_stats</a></span>(<span class="dt">start_date =</span> <span class="st">"2019-10-02"</span>, <span class="dt">end_date =</span> <span class="st">"2020-02-28"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(player_s)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;   assists evGoals evPoints faceoffWinPct gameWinningGoals gamesPlayed goals</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt; 1      62      24       59       0.51809               10          64    37</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt; 2      44      27       54       0.37500                9          65    46</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt; 3      56      25       67       0.50000                4          63    32</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; 4      56      20       48       0.47892                5          58    31</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt; 5      52      23       56       0.42693                4          63    33</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; 6      55      20       52       0.40816                5          65    26</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt;    lastName otGoals penaltyMinutes playerId plusMinus points pointsPerGame</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt; 1 Draisaitl       2             16  8477934       -11     99       1.54687</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt; 2  Pastrnak       1             34  8477956        20     90       1.38461</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt; 3   Panarin       0             18  8478550        35     88       1.39682</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt; 4   McDavid       0             28  8478402        -7     87       1.50000</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co">#&gt; 5 MacKinnon       2             12  8477492         9     85       1.34920</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="co">#&gt; 6  Marchand       0             72  8473419        24     81       1.24615</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="co">#&gt;   positionCode ppGoals ppPoints shGoals shPoints shootingPct shootsCatches</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="co">#&gt; 1            C      13       40       0        0     0.18686             L</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="co">#&gt; 2            R      19       36       0        0     0.18039             R</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="co">#&gt; 3            L       7       21       0        0     0.16494             R</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="co">#&gt; 4            C      11       39       0        0     0.16062             L</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a><span class="co">#&gt; 5            C      10       29       0        0     0.11262             R</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="co">#&gt; 6            L       5       26       1        3     0.14857             L</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="co">#&gt;   shots   skaterFullName timeOnIcePerGame</span></span>
+<span id="cb5-25"><a href="#cb5-25"></a><span class="co">#&gt; 1   198   Leon Draisaitl         1361.516</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a><span class="co">#&gt; 2   255   David Pastrnak         1146.369</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a><span class="co">#&gt; 3   194   Artemi Panarin         1219.460</span></span>
+<span id="cb5-28"><a href="#cb5-28"></a><span class="co">#&gt; 4   193   Connor McDavid         1323.000</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a><span class="co">#&gt; 5   293 Nathan MacKinnon         1278.889</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="co">#&gt; 6   175    Brad Marchand         1178.246</span></span></code></pre></div>
 <p>Stats for teams specified by start year or start year and end year:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>attendance &lt;-<span class="st"> </span><span class="kw"><a href="../reference/team_stats.html">team_stats</a></span>(<span class="dt">start_season =</span> <span class="st">"19801981"</span>, <span class="dt">end_season =</span> <span class="st">"19891990"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(attendance)</span></code></pre></div>
-<div class="figure">
-<img src="../img/team_stat.png" alt=""><p class="caption">team_stat</p>
-</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>attendance &lt;-<span class="st"> </span><span class="kw"><a href="../reference/team_stats.html">team_stats</a></span>(<span class="dt">start_season =</span> <span class="st">"19801981"</span>, <span class="dt">end_season =</span> <span class="st">"19891990"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(attendance)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;   faceoffWinPct gamesPlayed goalsAgainst goalsAgainstPerGame goalsFor</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt; 1            NA          80          338              4.2250      230</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt; 2            NA          80          336              4.2000      343</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 3            NA          80          317              3.9625      321</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 4            NA          80          287              3.5875      306</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 5            NA          80          394              4.9250      257</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 6            NA          80          333              4.1625      311</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt;   goalsForPerGame losses otLosses penaltyKillNetPct penaltyKillPct pointPct</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt; 1          2.8750     49       NA          0.757679       0.733789  0.30000</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co">#&gt; 2          4.2875     34       NA          0.751445       0.734105  0.50000</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="co">#&gt; 3          4.0125     34       NA          0.798449       0.771318  0.48750</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="co">#&gt; 4          3.8250     35       NA          0.792880       0.754046  0.50000</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co">#&gt; 5          3.2125     53       NA          0.732323       0.724748  0.28125</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="co">#&gt; 6          3.8875     39       NA          0.767068       0.730924  0.46250</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#&gt;   points powerPlayNetPct powerPlayPct regulationAndOtWins seasonId</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="co">#&gt; 1     48        0.182119     0.215231                  17 19821983</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a><span class="co">#&gt; 2     80        0.185185     0.205387                  34 19821983</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a><span class="co">#&gt; 3     78        0.216117     0.238095                  32 19821983</span></span>
+<span id="cb6-21"><a href="#cb6-21"></a><span class="co">#&gt; 4     80        0.203821     0.229299                  35 19821983</span></span>
+<span id="cb6-22"><a href="#cb6-22"></a><span class="co">#&gt; 5     45        0.183333     0.225000                  18 19821983</span></span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="co">#&gt; 6     74        0.208459     0.229607                  33 19821983</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="co">#&gt;   shotsAgainstPerGame shotsForPerGame         teamFullName teamId ties wins</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a><span class="co">#&gt; 1             32.0875         25.6875    New Jersey Devils      1   14   17</span></span>
+<span id="cb6-26"><a href="#cb6-26"></a><span class="co">#&gt; 2             32.5375         28.9125     Quebec Nordiques     32   12   34</span></span>
+<span id="cb6-27"><a href="#cb6-27"></a><span class="co">#&gt; 3             33.0875         28.5875       Calgary Flames     20   14   32</span></span>
+<span id="cb6-28"><a href="#cb6-28"></a><span class="co">#&gt; 4             29.8000         28.5250     New York Rangers      3   10   35</span></span>
+<span id="cb6-29"><a href="#cb6-29"></a><span class="co">#&gt; 5             32.6875         30.2250  Pittsburgh Penguins      5    9   18</span></span>
+<span id="cb6-30"><a href="#cb6-30"></a><span class="co">#&gt; 6             31.6375         31.7625 Winnipeg Jets (1979)     33    8   33</span></span>
+<span id="cb6-31"><a href="#cb6-31"></a><span class="co">#&gt;   winsInRegulation winsInShootout</span></span>
+<span id="cb6-32"><a href="#cb6-32"></a><span class="co">#&gt; 1               17              0</span></span>
+<span id="cb6-33"><a href="#cb6-33"></a><span class="co">#&gt; 2               34              0</span></span>
+<span id="cb6-34"><a href="#cb6-34"></a><span class="co">#&gt; 3               32              0</span></span>
+<span id="cb6-35"><a href="#cb6-35"></a><span class="co">#&gt; 4               35              0</span></span>
+<span id="cb6-36"><a href="#cb6-36"></a><span class="co">#&gt; 5               18              0</span></span>
+<span id="cb6-37"><a href="#cb6-37"></a><span class="co">#&gt; 6               33              0</span></span></code></pre></div>
 </div>
 <div id="tests" class="section level2">
 <h2 class="hasAnchor">
@@ -177,33 +234,60 @@
 <h2 class="hasAnchor">
 <a href="#r-ecosystem" class="anchor"></a>R Ecosystem</h2>
 <p>There are some packages written in the R language that are focused on providing a user with convenient tools to access statistics from NHL.com with API calls and helping to make sense of them. Rpuck is landing in its own niche with compared with such libraries as <a href="https://github.com/zamorarr/nhlapi">nhlapi</a>, <a href="https://cran.r-project.org/web/packages/nhlscrape/index.html">nhlscrape</a>.</p>
-</div>
-<div id="dependencies" class="section level2">
-<h2 class="hasAnchor">
-<a href="#dependencies" class="anchor"></a>Dependencies</h2>
+<div id="dependencies" class="section level3">
+<h3 class="hasAnchor">
+<a href="#dependencies" class="anchor"></a>Dependencies</h3>
 <p>R version 3.6.1 and R packages:</p>
-<ul>
-<li>dplyr==0.8.3 <span class="citation">[@dplyr]</span>
-</li>
-<li>httr==1.4.1 <span class="citation">[@httr]</span>
-</li>
-<li>ggplot2==3.2.1 <span class="citation">[@ggplot2]</span>
-</li>
-<li>jsonlite==1.6 <span class="citation">[@jsonlite]</span>
-</li>
-<li>grid==3.6.2 <span class="citation">[@grid]</span>
-</li>
-<li>gridExtra==2.3 <span class="citation">[@gridExtra]</span>
-</li>
-<li>glue==1.3.1 <span class="citation">[@glue]</span>
-</li>
-<li>tidyr=1.0.0 <span class="citation">[@tidyr]</span>
-</li>
-<li>testthat==2.3.1 <span class="citation">[@testthat]</span>
-</li>
-<li>scales==1.0.0 <span class="citation">[@scales]</span>
-</li>
-</ul>
+<table class="table">
+<thead><tr class="header">
+<th>Package</th>
+<th>Minimum Supported Version</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a></td>
+<td>0.8.3</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/httr/index.html">httr</a></td>
+<td>1.4.1</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/ggplot2/index.html">ggplot2</a></td>
+<td>3.2.1</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/jsonlite/index.html">jsonlite</a></td>
+<td>1.6</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.rdocumentation.org/packages/grid/versions/3.6.2">grid</a></td>
+<td>3.6.2</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/gridExtra/index.html">gridExtra</a></td>
+<td>2.3</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/glue/index.html">glue</a></td>
+<td>1.3.1</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/tidyr/index.html">tidyr</a></td>
+<td>1.0.0</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/testthat/index.html">testthat</a></td>
+<td>2.3.1</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/scales/index.html">scales</a></td>
+<td>1.0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
   </div>
 
@@ -212,13 +296,16 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+<li>
+<a href="#rpuck">rpuck</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#team">Team</a></li>
       <li><a href="#installation">Installation</a></li>
       <li><a href="#features">Features</a></li>
-      <li><a href="#usage">Usage</a></li>
+      <li><a href="#usage-example">Usage Example</a></li>
       <li><a href="#tests">Tests</a></li>
       <li><a href="#r-ecosystem">R Ecosystem</a></li>
-      <li><a href="#dependencies">Dependencies</a></li>
+      </ul>
+</li>
       </ul>
 </div>
       </div>
