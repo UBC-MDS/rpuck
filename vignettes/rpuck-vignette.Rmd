@@ -26,13 +26,7 @@ If you were to try and analyze statistics for your favorite hockey team, or try 
 
 ## Installation
 
-You can install the released version of rpuck from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("rpuck")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version of rpuck from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")

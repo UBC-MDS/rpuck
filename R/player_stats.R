@@ -11,8 +11,8 @@
 #' The function will return the current season's stats if the arguments
 #' are blank (i.e. left as None).
 #'
-#' @param start_date string
-#' @param end_date string
+#' @param start_date string: the start date
+#' @param end_date string: the end data
 #'
 #' @return data.frame
 #' @export
